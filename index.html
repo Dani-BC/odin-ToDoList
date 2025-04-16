@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="grid">
+        <div class="filler"></div>
+        <div class="vertical" id="vertical">
+        </div>
+        <div class="horizontal">
+            <h1>To Do List</h1>
+            <div>
+            <Button class="addbutton" onclick="openForm('myForm1')">Add New list</Button>
+            <Button class="addbutton" onclick="openForm('myForm2')">Add New list item</Button>
+            </div>
+        </div>
+        <div class="block2x2" id="block2x2"></div>
+      </div>
+
+      <div class="form-popup1" id="myForm1">
+        <form action="" class="form-container">
+          <h1>Add New List</h1>
+      
+          <label for="list name"><b>List Name</b></label>
+          <input type="text" id="listName" name="listName" placeholder="List Name" required>
+      
+          <button type="submit" onclick="addTabToLocalStorage()" class="btn">Add</button>
+          <button type="button" class="btn cancel" onclick="closeForm('myForm1')">Close</button>
+        </form>
+      </div>
+
+      <div class="form-popup2" id="myForm2">
+        <form action="" class="form-container">
+          <h1>Add New To-Do Item</h1>
+          
+          <label for="title"><b>Title</b></label>
+          <input type="text" placeholder="Enter title" id="Title" name="title" required>
+      
+          <label for="description"><b>Description</b></label>
+          <input type="text" placeholder="Enter description" id="Description" name="description" required>
+          
+          <label for="dueDate"><b>Due Date</b></label>
+          <input type="date" id="Date" name="dueDate" required>
+          
+          <label for="priority"><b>Priority</b></label>
+          <select name="priority" id="Priority" required>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+          <label for="destination"><b>Destination</b></label>
+          <select name="destination" id="tabSelector">
+            <option value="">Select a tab</option>
+          </select>
+          
+          <button type="submit" onclick="addToDoToLocalStorage()" class="btn">Add</button>
+          <button type="button" class="btn cancel" onclick="closeForm('myForm2')">Close</button>
+        </form>
+      </div>
+
+</body>
+<script src="scripts.js"></script>
+</html>
